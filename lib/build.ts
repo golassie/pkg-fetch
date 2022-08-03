@@ -182,12 +182,12 @@ async function compileOnWindows(
   }
 
   // Can't cross compile for arm64 with small-icu
-  if (
-    hostArch !== targetArch &&
-    !config_flags.includes('--with-intl=full-icu')
-  ) {
-    config_flags.push('--without-intl');
-  }
+  // if (
+  //   hostArch !== targetArch &&
+  //   !config_flags.includes('--with-intl=full-icu')
+  // ) {
+  //   config_flags.push('--without-intl');
+  // }
 
   await spawn('cmd', args, {
     cwd: nodePath,
